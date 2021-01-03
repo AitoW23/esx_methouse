@@ -101,7 +101,9 @@ AddEventHandler('esx_customrob4:robberyStarted', function(currentStore)
 						if xPlayer then
 							TriggerClientEvent('esx_customrob4:robberyComplete', _source)
 
-							if chance >= 1 and chance <= 10 then
+
+							xPlayer.addAccountMoney('black_money', 50000)
+							--[[ if chance >= 1 and chance <= 10 then
 								xPlayer.addInventoryItem('hqscale', 1)
 							elseif chance >= 11 and chance <= 30 then
 								xPlayer.addInventoryItem('highgradefemaleseed', math.random(1, 10))
@@ -115,7 +117,7 @@ AddEventHandler('esx_customrob4:robberyStarted', function(currentStore)
 							elseif chance >= 76 and chance <= 100 then
 								xPlayer.addInventoryItem('methburn', math.random(3, 10))
 								xPlayer.addInventoryItem('methbrick', math.random(3, 10))
-							end
+							end ]]
 							
 							local xPlayers, xPlayer = ESX.GetPlayers(), nil
 							for i=1, #xPlayers, 1 do
